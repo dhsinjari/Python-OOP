@@ -1,20 +1,19 @@
-
-
-
 class User:
     def __init__(self, firstName, lastName, bankBalance):
         self.firstName = firstName
         self.lastName = lastName
         self.bankBalance = bankBalance
         
+        
     
     def withdraw(self, amount):
         self.bankBalance -= amount
-        return self.bankBalance
+        return self
+     
     
     def deposit(self, amount):
         self.bankBalance += amount
-        return self.bankBalance
+        return self
     
     def userBalance(self):
         x = '%s %s,User Bank Balance: %s' %\
@@ -35,23 +34,11 @@ user1 = User('Dhimitri', 'Sinjari', 300)
 user2 = User('Jon', 'Doe', 400)
 user3 = User('Elon', 'Musk', 238000000000)
 
-user1.deposit(200)
-user1.deposit(200)
-user1.deposit(200)
-user1.withdraw(100)
-user1.userBalance()
+user1.deposit(200).deposit(200).deposit(200).withdraw(100).userBalance()
 
-user2.deposit(1000)
-user2.deposit(100)
-user2.withdraw(100)
-user2.withdraw(100)
-user2.userBalance()
+user2.deposit(1000).deposit(100).withdraw(100).withdraw(100).userBalance()
 
-user3.deposit(100)
-user3.withdraw(1000)
-user3.withdraw(1000)
-user3.withdraw(1000)
-user3.userBalance()
+user3.deposit(100).withdraw(1000).withdraw(1000).withdraw(1000).userBalance()
 
 
 #user1.transferMoney(user1,user2,100)
